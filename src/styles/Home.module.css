@@ -1,0 +1,192 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 15px;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.button {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #0070f3;
+  transition: background-color .3s;
+}
+
+.button:hover {
+  background-color: #1d87ff;
+}
+
+.toast {
+  width: clamp(300px, 350px, 400px);
+  min-height: 75px;
+  position: relative;
+  opacity: 1;
+  padding: 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px rgb(69, 69, 69);
+
+  transition: 0.2s;
+  animation: fadeIn 0.4s;
+}
+
+.toast:hover {
+  transition: 0.2s;
+  transform: scale(0.95);
+  box-shadow: 0px 0px 3px gray;
+}
+
+.toastListContainer {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.success {
+  background-color: rgb(99, 197, 99);
+}
+
+.warning {
+  background-color: rgb(189, 168, 131);
+}
+
+.error {
+  background-color: rgb(189, 131, 131);
+}
+
+.info {
+  background-color: rgb(131, 152, 189);
+}
+
+.progress-success {
+  background-color: rgb(70, 151, 70);
+}
+
+.progress-warning {
+  background-color: rgb(145, 123, 85);
+}
+
+.progress-error {
+  background-color: rgb(155, 92, 92);
+}
+
+.progress-info {
+  background-color: rgb(74, 95, 131);
+}
+
+.toastPosition {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.showToastNotification {
+  right: 50px;
+  opacity: 1;
+}
+
+.toast h3 {
+  font-size: 1.1rem;
+  margin-bottom: .2rem;
+  margin-top: .5rem;
+}
+
+.toast span {
+  float: right;
+}
+
+.toast p {
+  font-size: .9rem;
+  margin-top: .5rem;
+}
+
+.progressBar {
+  height: 8px;
+  width: 100%;
+  animation-name: progress;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    left: 500px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
