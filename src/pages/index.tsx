@@ -16,8 +16,8 @@ export default function Home() {
 
   useDebounce(() => {
     setCount(0)
-    alert(`Number of time you clicked before hit the delay: ${3}`)
-  }, 1000, [])
+    alert(`Number of time you clicked before hit the delay: ${count}`)
+  }, 1000, [count])
 
   const addToast = () => {
     toastRef.current.addMessage({ mode, message: 'Test of Toast Notification.', id: '' });
