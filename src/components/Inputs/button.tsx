@@ -6,10 +6,14 @@ interface ButtonProps {
     name: string
 }
 
-const Button : FC<ButtonProps> = ({ click, name }) => {
+const Button : FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({ click, name, ...props }) => {
 
     return (
-        <button className={styles.button} onClick={click}>
+        <button 
+            {...props } 
+            className={styles.button} 
+            onClick={click} 
+        >
             {name}
         </button>
     )

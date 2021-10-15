@@ -3,3 +3,4 @@ export { useToastPortal } from "./Toast/useToastPortal";
 
 export { useDebounce } from "./Misc/useDebounce";
 export { useAsync } from "./Misc/useAsync";
+export { useFetch } from "./Misc/useFetch";
