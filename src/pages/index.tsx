@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-import { Button } from "src/components/Inputs";
+import { Button, DropDown } from "src/components/Inputs";
 import { ToastPortal } from "src/components/Toast";
 import { AsyncComponent, FetchComponent } from "src/components/Example";
 
@@ -41,6 +41,11 @@ export default function Home() {
             <Button click={addToast} name="Pop up" />
             <Button click={addToast} name="Sidebar" />
             <Button click={() => setCount(count + 1)} name="Debounce" />
+            <DropDown buttonName="Drop Down">
+              <p>Content 1</p>
+              <p>Content 1</p>
+              <p>Content 1</p>
+            </DropDown>
           </div>      
 
           <AsyncComponent />

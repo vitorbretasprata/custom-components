@@ -54,6 +54,30 @@
   background-color: #1d87ff;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdownmenu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + .25rem);
+  background: white;
+  padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .button + .dropdownmenu {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
 .toast {
   width: clamp(300px, 350px, 400px);
   min-height: 75px;
