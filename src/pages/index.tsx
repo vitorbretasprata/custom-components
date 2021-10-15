@@ -6,10 +6,18 @@ import styles from '../styles/Home.module.css';
 import { Button } from "src/components/Inputs";
 import { ToastPortal } from "src/components/Toast";
 
+import { useDebounce } from "src/hooks/Misc/useDebounce";
+
 export default function Home() {
   const toastRef = useRef(null);
 
   const [mode, setMode] = useState('info');
+  const [count, setCount] = useState(0);
+
+  useDebounce(() => {
+    setCount(0)
+    alert(`Number of time you clicked before hit the delay: ${3}`)
+  }, 1000, [])
 
   const addToast = () => {
     toastRef.current.addMessage({ mode, message: 'Test of Toast Notification.', id: '' });
@@ -31,6 +39,8 @@ export default function Home() {
           <Button click={addToast} name="Toast Notification" />
           <Button click={addToast} name="Pop up" />
           <Button click={addToast} name="Sidebar" />
+          <Button click={() => setCount(count + 1)} name="Debounce" />
+
         </div>
       </main>
 
