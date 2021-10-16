@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 
 import { Button, DropDown } from "src/components/Inputs";
 import { ToastPortal } from "src/components/Toast";
-import { AsyncComponent, FetchComponent } from "src/components/Example";
+import { AsyncComponent, FetchComponent, Skeleton } from "src/components/Example";
 
 import { useDebounce } from "src/hooks";
 
@@ -50,6 +50,7 @@ export default function Home() {
 
           <AsyncComponent />
           <FetchComponent />
+          <Skeleton />
       </main>
       
     </div>

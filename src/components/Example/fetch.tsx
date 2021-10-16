@@ -11,7 +11,9 @@ function FetchComponent() {
 
     const { error, loading, value } = useFetch(
         `https://jsonplaceholder.typicode.com/todos/${id}`,
-        {},
+        {
+            method: 'GET'
+        },
         [id]
     );
 
