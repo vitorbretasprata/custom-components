@@ -21,7 +21,7 @@ function FetchComponent() {
     return (
         <div>
             <h4>UseFetch</h4>
-            <Button name="Increment ID" click={increment} disabled={loading} />
+            <Button btnName="Increment ID" click={increment} disabled={loading} />
             <div>
                 <p>Loading: {loading.toString()}</p>
                 <div>{JSON.stringify(error, null, 2)}</div>

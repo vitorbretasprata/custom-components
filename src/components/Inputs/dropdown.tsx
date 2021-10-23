@@ -1,12 +1,15 @@
 
-import { HtmlHTMLAttributes, FC, useEffect } from "react";
+import { FC, useEffect, memo } from "react";
 import styles from "src/styles/Home.module.css";
 
 interface DropDownProps {
-    buttonName: string
+    buttonName: string,
+    children: JSX.Element[]
 }
 
 const DropDown : FC<DropDownProps> = ({ buttonName, children }) => {
+
+    console.log("Piroca")
 
     useEffect(() => {
         document.addEventListener("click", dropDownEvent);
@@ -24,12 +27,12 @@ const DropDown : FC<DropDownProps> = ({ buttonName, children }) => {
         let currentDropDown;
         if(isDropDownButton) {
             currentDropDown = e.target.closest('[data-dropdown]');
-            currentDropDown.classList.toggle('active');
+            currentDropDown.classList.toggle(styles.active);
         }
 
-        document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+        document.querySelectorAll("[data-dropdown]." + styles.active).forEach(dropdown => {
             if(dropdown === currentDropDown) return;
-            dropdown.classList.remove('active')
+            dropdown.classList.remove(styles.active)
         });
     }
 
@@ -43,4 +46,4 @@ const DropDown : FC<DropDownProps> = ({ buttonName, children }) => {
     )
 }
 
-export default DropDown;
+export default memo(DropDown);

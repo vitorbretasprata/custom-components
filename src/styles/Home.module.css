@@ -40,8 +40,7 @@
   margin-top: 3rem;
 }
 
-.button,
-.link {
+.button {
   padding: 1rem;
   border: none;
   border-radius: 5px;
@@ -54,28 +53,116 @@
   background-color: #1d87ff;
 }
 
-.dropdown {
+.multiselect {
+  width: 100%;
+  height: 42px;
+  border-radius: 5px;
+  border: 1px solid #afafaf;
+  display: grid;
+  grid-template-columns: auto 45px;
+}
+
+.multiselect > div {
+  height: 42px;
+  color: #afafaf;
+}
+
+.dropdownSelect {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.multiselectIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  overflow: hidden;   
+  display: flex;
+  align-items: center;
+  padding-left: .8rem;
+}
+
+.optionSelected  {
+  background-color: #1d87ff;
+  margin-left: .3rem;
+  padding: .3rem .5rem;
+  border-radius: 2px;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  width: auto;
+  color: #fff;
+  height: 30px;
+}
+
+.optionSelected span {
+  margin-right: .3rem;
+}
+
+.optionSelected svg {
+  margin-top: .1rem;
+}
+
+.dropdown,
+.dropdownSelect {
   position: relative;
 }
 
-.dropdownmenu {
+.dropdownmenu,
+.multiselectmenu {
   position: absolute;
   left: 0;
   top: calc(100% + .25rem);
   background: white;
-  padding: .75rem;
+  padding: .75rem 0;
   border-radius: .25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   opacity: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: scroll;
+  z-index: 99;
   pointer-events: none;
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-.dropdown.active > .link + .dropdownmenu {
+.dropdownmenu div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .5rem .7rem;
+  transition: all .3s;
+}
+
+.dropdownmenu div input {
+  margin-right: .8rem;
+}
+
+.dropdownmenu div:hover {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+.multiselectmenu {
+  transform: translateY(-20px);
+}
+
+.dropdown.active > .button + .dropdownmenu,
+.dropdownSelect.active > .multiselect + .dropdownmenu {
   opacity: 1;
   transform: translateY(0px);
   pointer-events: auto;
+}
+
+.dropdownSelect.active > .multiselect + .dropdownmenu {
+  transform: translateY(-10px);
 }
 
 .toast {
