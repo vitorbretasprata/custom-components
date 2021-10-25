@@ -9,6 +9,8 @@ import { AsyncComponent, FetchComponent, Skeleton } from "src/components/Example
 
 import { useDebounce } from "src/hooks";
 
+import { Sidebar } from "src/components/Header"
+
 export default function Home() {
   const toastRef = useRef(null);
 
@@ -51,10 +53,11 @@ export default function Home() {
         <meta name="description" content="My custom components" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>My custom components</h1>
-      <h5>These are components I created to use on my project using the minimum of third party libraries</h5>
-
+      
+      <Sidebar />
       <main className={styles.main}>
+          <h1>My custom components</h1>
+          <h5>These are components I created to use on my project using the minimum of third party libraries</h5>
           <ToastPortal ref={toastRef} autoClose={true} autoCloseTime={5000} />
           <div className={styles.grid}>
             <Button click={addToast} btnName="Toast Notification" />

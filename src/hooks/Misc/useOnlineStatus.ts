@@ -6,4 +6,6 @@ export const useOnlineStatus = () => {
 
     useEventListener("online", () => setOnline(true));
     useEventListener("offline", () => setOnline(false));
+
+    return online;
 }
