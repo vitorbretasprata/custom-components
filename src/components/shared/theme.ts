@@ -9,18 +9,6 @@ const theme = {
     colors: {
       
     },
-    modes: {
-        default: {
-            primary: "#3d4af1",
-            primaryDark: "#3651d4",
-            primaryLight: "#5872f5",
-            text: "#cfcde7"
-        },
-        dark: {
-            
-        },
-        
-    }
 }
 
 export default theme

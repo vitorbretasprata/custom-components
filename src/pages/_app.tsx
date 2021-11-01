@@ -1,15 +1,21 @@
 import '../styles/globals.css'
 import { ThemeProvider } from "styled-components";
 
-import theme from "src/components/shared/theme";
+import { useContext } from "react";
+
+import { AppContext, Context } from "src/context/context";
 
 function MyApp({ Component, pageProps }) {
 
+  const jesus = useContext(AppContext);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
-  )
+    <Context>
+      <ThemeProvider theme={jesus.theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Context>
+  );
 }
 
 export default MyApp
