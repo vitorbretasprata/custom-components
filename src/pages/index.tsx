@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 
 import { Button, DropDown, MultiSelect } from "src/components/Inputs";
 import { ToastPortal } from "src/components/Toast";
-import { AsyncComponent, FetchComponent, Skeleton } from "src/components/Example";
+import { AsyncComponent, FetchComponent, Skeleton, Slider } from "src/components/Example";
 
 import { useDebounce } from "src/hooks";
 
@@ -84,6 +84,33 @@ export default function Home() {
           <AsyncComponent />
           <FetchComponent />
           <Skeleton />
+
+          <div className='container'>
+            <Slider>
+              <>
+                <li className='d-flex slide'>
+                    1
+                </li>
+
+                <li className='d-flex slide'>
+                    2
+                </li>
+
+                <li className='d-flex slide'>
+                    3
+                </li>
+
+                <li className='d-flex slide'>
+                    4
+                </li>
+
+                <li className='d-flex slide'>
+                    5
+                </li>
+              </>
+            </Slider>
+          </div>
+          
       </main>
       
     </div>

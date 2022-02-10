@@ -7,7 +7,6 @@ interface ButtonProps {
 }
 
 const Button : FC<ButtonProps & React.HTMLProps<HTMLButtonElement>> = ({ click, btnName, ...props }) => {
-    console.log("Button")
     return (
         <button 
             {...props } 

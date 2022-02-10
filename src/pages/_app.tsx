@@ -1,9 +1,7 @@
-import '../styles/globals.css'
 import { ThemeProvider } from "styled-components";
-
 import { useContext } from "react";
-
 import { AppContext, Context } from "src/context/context";
+import { GlobalStyles } from "src/styles/global";
 
 function MyApp({ Component, pageProps }) {
 
@@ -12,6 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Context>
       <ThemeProvider theme={jesus.theme}>
+        <GlobalStyles />
         <Component {...pageProps} />
       </ThemeProvider>
     </Context>
